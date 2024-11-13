@@ -1,0 +1,36 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaDemo.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaDemo.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+  <StackPanel>
+    <Border Margin="5"
+      CornerRadius="10"
+      Background="LightBlue">
+      <TextBlock Margin="5"
+         FontSize="24"
+         HorizontalAlignment="Center"
+         Text="温度转换器">
+      </TextBlock>
+    </Border>
+    <StackPanel>
+      <Grid ShowGridLines="True" Margin="5"
+      ColumnDefinitions="120, 100"
+      RowDefinitions="Auto, Auto, Auto">
+        <Label Grid.Row="0" Grid.Column="0">Celsius</Label>
+        <TextBox Grid.Row="0" Grid.Column="1"/>
+        <Label Grid.Row="1" Grid.Column="0">Fahrenheit</Label>
+        <TextBox Grid.Row="1"  Grid.Column="1"/>
+      </Grid>
+    </StackPanel>
+    <Button HorizontalAlignment="Center" Click="ButtonClicked">计算</Button>
+  </StackPanel>
+</UserControl>
